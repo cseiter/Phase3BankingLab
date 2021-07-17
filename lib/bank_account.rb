@@ -21,4 +21,8 @@ class BankAccount
         #boolean status open and balance > 0
         self.balance > 0 && self.status == "open"
     end
+
+    def close_account
+        self.status = "closed"
+    end
 end
