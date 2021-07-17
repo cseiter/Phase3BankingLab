@@ -16,4 +16,16 @@ class Transfer
     sender.valid? && receiver.valid?
   end
 
+  def execute_transaction
+    #accounts valid and sender > amount
+    if valid? && sender.balance > amount
+      sender.balance -= amount
+      receiver.balance += amount
+      self.status = "complete"
+    else
+      status = "rejected"
+    end
+
+  end
+
 end
